@@ -11,7 +11,15 @@ exports.handler = function(event, context) {
     if (err) {
       context.fail(err);
     } else {
-      var key = event.url + '.jpeg';
+
+      var key;
+      
+      if (event.key !== undefined) {
+        key = event.key + '.jpeg';
+      } else {
+        key = event.url + '.jpeg';
+      }
+
       var body = new Readable().wrap(stream);
       var params = {Bucket: event.bucket, Key: key, Body: body};
       s3.upload(params, function(err, data) {
