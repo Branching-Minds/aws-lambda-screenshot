@@ -1,0 +1,8 @@
+{
+  "name": "screenshot",
+  "version": "1.0.0",
+  "dependencies":{
+    "webshot": "0.16.0",
+    "aws-sdk": "2.1.33"
+  }
+}
