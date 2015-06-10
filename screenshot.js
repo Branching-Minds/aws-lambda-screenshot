@@ -26,7 +26,7 @@ exports.handler = function(event, context) {
         if (err) {
           context.fail(err);
         } else {
-          context.succeed(data);
+          context.succeed(null);
         }
       });
     }
